@@ -34,8 +34,8 @@
 
 #### Configuration
 
-1. Create a .env file in the root directory of the project.
-2. Add necessary configuration variables in the .env file. Example:
+1. Create a `.env` file in the root directory of the project.
+2. Add necessary configuration variables in the `.env` file. Example:
 
 ```js
 PORT = 3000;

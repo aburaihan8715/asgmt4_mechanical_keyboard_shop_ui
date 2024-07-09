@@ -1,5 +1,7 @@
+import AppLayout from './components/layout/AppLayout';
+
 const App = () => {
-  return <div>App component</div>;
+  return <AppLayout />;
 };
 
 export default App;

@@ -1,0 +1,38 @@
+// COLORS
+
+// ===main===
+tint-0:
+tint-1:
+tint-2:
+tint-3:
+tint-4:
+tint-5:
+tint-6:
+tint-7:
+tint-8:
+tint-9:#e9effd
+mani:#2563EB
+shade-0:
+shade-1:
+shade-2:
+shade-3:
+shade-4:
+shade-5:
+shade-6:
+shade-7:
+shade-8:
+shade-9:
+
+
+
+// ===gray==
+gray-0:#f8f9fa
+gray-1:
+gray-2:
+gray-3:
+gray-4:
+gray-5:
+gray-6:
+gray-7:
+gray-8:
+gray-9:#212529
