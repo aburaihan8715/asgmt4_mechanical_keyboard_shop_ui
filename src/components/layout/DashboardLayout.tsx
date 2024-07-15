@@ -9,9 +9,12 @@ const DashboardLayout = () => {
         <Link to="/">
           <BrandLogo />
         </Link>
-        <Sidebar />
+        <div className="mt-5">
+          <Sidebar />
+        </div>
       </div>
-      <div className="flex-[4] bg-red-200 h-screen p-5">
+
+      <div className="flex-[4] h-screen p-5">
         <Outlet />
       </div>
     </div>

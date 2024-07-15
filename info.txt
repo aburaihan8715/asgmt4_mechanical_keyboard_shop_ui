@@ -1,4 +1,4 @@
-// COLORS
+// 01 COLORS
 
 // ===main===
 tint-0:
@@ -36,3 +36,33 @@ gray-6:
 gray-7:
 gray-8:
 gray-9:#212529
+
+
+// 02 Model
+## Products
+_id,
+title,
+image,
+brand,
+availableQuantity,
+price,
+rating
+
+## User
+_id,
+name,
+email,
+password,
+role,
+image,
+
+
+
+
+// 03 Extra info
+// carousel images
+https://kono.store/cdn/shop/files/Discord---Banner---2_2000x800_crop_center.jpg?v=1660947236
+
+https://kono.store/cdn/shop/files/Discord-Multi-Cap-Banner_2000x1143_crop_center.png?v=1662051356
+
+https://kono.store/cdn/shop/files/whiteandblack.451_2400x1350_40f5f657-a399-4043-8d89-4444d07c1a24_2000x1125_crop_center.png?v=1678920638

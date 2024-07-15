@@ -1,0 +1,83 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+
+import { Button } from '../ui/button';
+
+const TTCarousel = () => {
+  return (
+    <section className="pb-20">
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        autoplay={{ delay: 3000 }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation, Autoplay]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="p-20 bg-[url('https://kono.store/cdn/shop/files/Discord---Banner---2_2000x800_crop_center.jpg?v=1660947236')] h-[90vh] flex items-center bg-center">
+            <div className="flex flex-col w-2/3 gap-6">
+              <h1 className="text-5xl font-semibold text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
+                Discord TKL Mechanical Keyboard
+              </h1>
+              <div>
+                <span className="text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
+                  On sale!
+                </span>
+              </div>
+              <div>
+                <Button>Buy Now</Button>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="p-20 bg-[url('https://kono.store/cdn/shop/files/Discord-Multi-Cap-Banner_2000x1143_crop_center.png?v=1662051356')] h-[90vh] flex items-center bg-center">
+            <div className="flex flex-col w-2/3 gap-6">
+              <h1 className="text-5xl font-semibold text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
+                Discord Artisans
+              </h1>
+              <div>
+                <span className="text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
+                  Resin and Metal Artisans for Discord's cute mascots!
+                </span>
+              </div>
+              <div>
+                <Button>Buy Now</Button>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="p-20 bg-[url('https://kono.store/cdn/shop/files/whiteandblack.451_2400x1350_40f5f657-a399-4043-8d89-4444d07c1a24_2000x1125_crop_center.png?v=1678920638')] h-[90vh] flex items-center bg-center">
+            <div className="flex flex-col w-2/3 gap-6">
+              <h1 className="text-5xl font-semibold text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
+                Titan65 Keyboard Kit
+              </h1>
+              <div>
+                <span className="text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
+                  Aluminum or Brass cases in stunning white and black
+                </span>
+              </div>
+              <div>
+                <Button>Buy Now</Button>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </section>
+  );
+};
+
+export default TTCarousel;

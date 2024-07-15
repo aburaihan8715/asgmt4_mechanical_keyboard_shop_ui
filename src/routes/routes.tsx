@@ -11,10 +11,11 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Home from '@/pages/Home';
 import ProductList from '@/pages/dashboard/ProductList';
 import AddProduct from '@/pages/dashboard/AddProduct';
+import Login from '@/pages/Login';
+import Dashboard from '@/pages/Dashboard';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
     element: <AppLayout />,
     children: [
       {
@@ -50,9 +51,12 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: 'dashboard',
     element: <DashboardLayout />,
     children: [
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
+      },
       {
         path: 'product-list',
         element: <ProductList />,
@@ -63,5 +67,10 @@ export const router = createBrowserRouter([
         element: <AddProduct />,
       },
     ],
+  },
+
+  {
+    path: '/login',
+    element: <Login />,
   },
 ]);
