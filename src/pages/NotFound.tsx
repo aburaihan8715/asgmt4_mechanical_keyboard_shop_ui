@@ -1,8 +1,8 @@
-const NotFoundPage = () => {
-  return <div>NotFoundPage</div>;
+const NotFound = () => {
+  return <div>NotFound</div>;
 };
 
-export default NotFoundPage;
+export default NotFound;
 
 /*
 import { useNavigate } from "react-router-dom";

@@ -1,11 +1,15 @@
 import { Button } from '@/components/ui/button';
+import SectionHeading from '@/components/ui/SectionHeading';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   return (
     <section className="px-10 py-20">
-      <h1>Your Bag</h1>
-      <div>
-        <Button>Continue Shopping</Button>
+      <SectionHeading heading="Your Bag" />
+      <div className="mb-5">
+        <Link to="/products">
+          <Button>Continue Shopping</Button>
+        </Link>
       </div>
       <div className="flex gap-4">
         <ul className="flex-[4] flex flex-col gap-10 border">
@@ -16,32 +20,39 @@ const Cart = () => {
           <CartProduct />
         </ul>
 
-        <div className="flex-[1] border p-5 h-[50vh] rounded-md">
-          <h4>Order Summary</h4>
+        <div className="flex-[1] ">
+          <div className="p-5 space-y-2 border rounded-md">
+            <h4 className="text-2xl font-medium text-gray-700">
+              Order Summary
+            </h4>
 
-          <div>
-            <span>Subtotal</span>
-            <span>$ 00.0</span>
-          </div>
+            <div className="flex justify-between">
+              <span>Subtotal</span>
+              <span>$ 00.0</span>
+            </div>
 
-          <div>
-            <span>Discount</span>
-            <span>$ 00.0</span>
-          </div>
+            <div className="flex justify-between">
+              <span>Discount</span>
+              <span>$ 00.0</span>
+            </div>
 
-          <div>
-            <span>Shipping Charge</span>
-            <span>$ 00.0</span>
-          </div>
+            <div className="flex justify-between">
+              <span>Shipping Charge</span>
+              <span>$ 00.0</span>
+            </div>
 
-          <div>
-            <span>Total</span>
-            <span>$ 00.0</span>
+            <div className="flex justify-between text-xl font-medium">
+              <span>Total</span>
+              <span>$ 00.0</span>
+            </div>
+
+            <div>
+              <Link to={`/checkout`}>
+                <Button className="w-full">Checkout Now</Button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <Button>Checkout Now</Button>
       </div>
     </section>
   );

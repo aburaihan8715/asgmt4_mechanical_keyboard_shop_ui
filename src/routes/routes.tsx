@@ -13,6 +13,8 @@ import ProductList from '@/pages/dashboard/ProductList';
 import AddProduct from '@/pages/dashboard/AddProduct';
 import Login from '@/pages/Login';
 import Dashboard from '@/pages/Dashboard';
+import EditProduct from '@/pages/dashboard/EditProduct';
+import Register from '@/pages/Register';
 
 export const router = createBrowserRouter([
   {
@@ -66,11 +68,19 @@ export const router = createBrowserRouter([
         path: 'add-product',
         element: <AddProduct />,
       },
+      {
+        path: 'edit-product/:id',
+        element: <EditProduct />,
+      },
     ],
   },
 
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   },
 ]);
