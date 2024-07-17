@@ -7,7 +7,7 @@ const ProductDetails = () => {
       <div className="flex h-full gap-10">
         <div className="flex-1 h-full">
           <img
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full rounded"
             src="https://kono.store/cdn/shop/files/Discord---Banner---2_2000x800_crop_center.jpg?v=1660947236"
             alt=""
           />

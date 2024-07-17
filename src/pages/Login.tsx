@@ -10,17 +10,6 @@ const Login = () => {
         <form>
           <div className="space-y-4 w-96">
             <div className="flex flex-col gap-2">
-              <label htmlFor="name">Name</label>
-              <input
-                className="w-full px-3 py-2 border rounded outline-none"
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter name"
-              />
-            </div>
-
-            <div className="flex flex-col gap-2">
               <label htmlFor="email">Email</label>
               <input
                 className="w-full px-3 py-2 border rounded outline-none"
@@ -30,6 +19,7 @@ const Login = () => {
                 placeholder="Enter email"
               />
             </div>
+
             <div className="flex flex-col gap-2">
               <label htmlFor="phone">Phone</label>
               <input
@@ -40,23 +30,22 @@ const Login = () => {
                 placeholder="Enter phone"
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="address">Address</label>
-              <textarea
-                className="w-full px-3 py-2 border rounded outline-none"
-                name="address"
-                id="address"
-                placeholder="Enter address"
-              />
-            </div>
+
             <div className="">
               <Button className="w-full">Login</Button>
             </div>
+
+            <div className="text-center">
+              New to here? Please{' '}
+              <Link
+                className="hover:underline text-primary"
+                to="/register"
+              >
+                Register
+              </Link>
+            </div>
           </div>
         </form>
-        <div>
-          New to here? Please <Link to="/register">Register</Link>
-        </div>
       </div>
     </section>
   );

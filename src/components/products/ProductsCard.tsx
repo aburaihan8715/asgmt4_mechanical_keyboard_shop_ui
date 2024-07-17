@@ -12,8 +12,11 @@ const ProductsCard = ({ item }: { item: TProduct }) => {
       <div>
         <img
           className="h-[160px] object-cover w-full"
-          // src={item.image}
-          src="https://kono.store/cdn/shop/files/GMK_Firefly_-_Prophet_1_3be17f6c-b936-40db-b561-2fdc6463a6f0_1600x600_crop_center.png?v=1631814814&quot"
+          src={`${
+            item.image
+              ? item.image
+              : 'https://kono.store/cdn/shop/files/GMK_Firefly_-_Prophet_1_3be17f6c-b936-40db-b561-2fdc6463a6f0_1600x600_crop_center.png?v=1631814814&quot'
+          }`}
           alt=""
         />
       </div>

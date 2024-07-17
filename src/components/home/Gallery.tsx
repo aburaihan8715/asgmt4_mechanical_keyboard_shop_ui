@@ -46,7 +46,7 @@ const Gallery = () => {
                 <img
                   alt="gallery"
                   className="block object-cover object-center w-full h-full"
-                  src="https://kono.store/cdn/shop/files/Discord-Multi-Cap-Banner_2000x1143_crop_center.png?v=1662051356"
+                  src="https://rb.gy/n2momw"
                 />
               </div>
               <div className="w-1/2 p-1 md:p-2">
@@ -60,7 +60,7 @@ const Gallery = () => {
                 <img
                   alt="gallery"
                   className="block object-cover object-center w-full h-full"
-                  src="https://kono.store/cdn/shop/files/whiteandblack.451_2400x1350_40f5f657-a399-4043-8d89-4444d07c1a24_2000x1125_crop_center.png?v=1678920638"
+                  src="https://rb.gy/07zfan"
                 />
               </div>
             </div>

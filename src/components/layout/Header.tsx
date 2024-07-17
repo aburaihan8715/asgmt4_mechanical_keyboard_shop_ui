@@ -50,6 +50,7 @@ const Header = () => {
         </div>
         <div>
           <img
+            onClick={() => alert('Not implemented yet!')}
             className="object-cover w-10 h-10 rounded-full"
             src="https://cdn.pixabay.com/photo/2020/09/18/05/58/lights-5580916_640.jpg"
             alt=""

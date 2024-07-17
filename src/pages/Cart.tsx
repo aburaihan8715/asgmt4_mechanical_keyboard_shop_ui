@@ -12,7 +12,7 @@ const Cart = () => {
         </Link>
       </div>
       <div className="flex gap-4">
-        <ul className="flex-[4] flex flex-col gap-10 border">
+        <ul className="flex-[4] flex flex-col border rounded">
           <CartProduct />
           <CartProduct />
           <CartProduct />
@@ -65,13 +65,10 @@ const CartProduct = () => {
     <li className="flex items-center h-full gap-10 p-5 border-b">
       <div className="">
         <img
-          className="w-[200px] h-[200px] object-cover"
+          className="w-[200px] h-[200px] object-cover rounded"
           src="https://kono.store/cdn/shop/files/Discord---Banner---2_2000x800_crop_center.jpg?v=1660947236"
           alt=""
         />
-        <p></p>
-        <p></p>
-        <p></p>
       </div>
       <div className="flex flex-col gap-4 ">
         <div className="flex gap-2">

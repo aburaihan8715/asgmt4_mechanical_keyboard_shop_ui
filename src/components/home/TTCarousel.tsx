@@ -23,7 +23,7 @@ const TTCarousel = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="p-20 bg-[url('https://kono.store/cdn/shop/files/Discord---Banner---2_2000x800_crop_center.jpg?v=1660947236')] h-[90vh] flex items-center bg-center">
+          <div className="p-20 bg-[url('https://shorturl.at/5mfiU')] h-[90vh] flex items-center bg-center">
             <div className="flex flex-col w-2/3 gap-6">
               <h1 className="text-5xl font-semibold text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
                 Discord TKL Mechanical Keyboard
@@ -41,7 +41,7 @@ const TTCarousel = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="p-20 bg-[url('https://kono.store/cdn/shop/files/Discord-Multi-Cap-Banner_2000x1143_crop_center.png?v=1662051356')] h-[90vh] flex items-center bg-center">
+          <div className="p-20 bg-[url('https://shorturl.at/6uiwf')] h-[90vh] flex items-center bg-center">
             <div className="flex flex-col w-2/3 gap-6">
               <h1 className="text-5xl font-semibold text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
                 Discord Artisans
@@ -59,7 +59,7 @@ const TTCarousel = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="p-20 bg-[url('https://kono.store/cdn/shop/files/whiteandblack.451_2400x1350_40f5f657-a399-4043-8d89-4444d07c1a24_2000x1125_crop_center.png?v=1678920638')] h-[90vh] flex items-center bg-center">
+          <div className="p-20 bg-[url('https://shorturl.at/dZhpb')] h-[90vh] flex items-center bg-center">
             <div className="flex flex-col w-2/3 gap-6">
               <h1 className="text-5xl font-semibold text-[#f8f9fa] bg-[#212924d5]/30 p-3 rounded-md">
                 Titan65 Keyboard Kit

@@ -6,7 +6,7 @@ const AddProduct = () => {
     <section className="">
       <SectionHeading heading="Add Product" />
       <form>
-        <div className=" space-y-5  px-20">
+        <div className="px-20 space-y-5 ">
           <div className="grid grid-cols-2 gap-x-10 gap-y-5">
             <div className="flex flex-col gap-2">
               <label htmlFor="name">Name</label>
@@ -78,7 +78,7 @@ const AddProduct = () => {
             </div>
 
             <div className="">
-              <Button className="w-full">Place Order</Button>
+              <Button className="w-full">Add Product</Button>
             </div>
           </div>
         </div>

@@ -30,34 +30,41 @@ const Register = () => {
                 placeholder="Enter email"
               />
             </div>
+
             <div className="flex flex-col gap-2">
-              <label htmlFor="phone">Phone</label>
+              <label htmlFor="phone">Password</label>
               <input
                 className="w-full px-3 py-2 border rounded outline-none"
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="Enter phone"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter password"
               />
             </div>
+
             <div className="flex flex-col gap-2">
-              <label htmlFor="address">Address</label>
-              <textarea
+              <label htmlFor="imgUrl">Img Url</label>
+              <input
                 className="w-full px-3 py-2 border rounded outline-none"
-                name="address"
-                id="address"
-                placeholder="Enter address"
+                type="text"
+                name="imgUrl"
+                id="imgUrl"
+                placeholder="Enter Img Url"
               />
             </div>
+
             <div className="">
-              <Button className="w-full">Login</Button>
+              <Button className="w-full">Register</Button>
+            </div>
+
+            <div className="text-center">
+              Already register? Please{' '}
+              <Link className="hover:underline text-primary" to="/login">
+                Login
+              </Link>
             </div>
           </div>
         </form>
-
-        <div>
-          Already register? Please <Link to="/login">Login</Link>
-        </div>
       </div>
     </section>
   );
