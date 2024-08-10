@@ -11,7 +11,7 @@ const ProductsCard = ({ item }: { item: TProduct }) => {
     >
       <div>
         <img
-          className="h-[160px] object-cover w-full"
+          className="h-[160px] object-cover w-full rounded"
           src={`${
             item.image
               ? item.image
@@ -35,7 +35,7 @@ const ProductsCard = ({ item }: { item: TProduct }) => {
 
         <div>
           <Link to="/product-details">
-            <Button className="w-full">🛒 Buy now</Button>
+            <Button className="w-full">Show details</Button>
           </Link>
         </div>
       </div>

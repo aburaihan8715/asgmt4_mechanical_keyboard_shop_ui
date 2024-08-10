@@ -22,21 +22,21 @@ const Gallery = () => {
               <div className="w-1/2 p-1 md:p-2">
                 <img
                   alt="gallery"
-                  className="block object-cover object-center w-full h-full"
+                  className="block object-cover object-center w-full h-full rounded"
                   src="https://media.istockphoto.com/id/1394788004/photo/gamer-work-space-concept-top-view-a-gaming-gear-mouse-keyboard-joystick-headset-mobile.jpg?b=1&s=612x612&w=0&k=20&c=lUAKZmGrGkztQYr1SSAJeuS8svZec1Ku87CxklPNVfA="
                 />
               </div>
               <div className="w-1/2 p-1 md:p-2">
                 <img
                   alt="gallery"
-                  className="block object-cover object-center w-full h-full"
+                  className="block object-cover object-center w-full h-full rounded"
                   src="https://kono.store/cdn/shop/files/GMK_Firefly_-_Prophet_1_3be17f6c-b936-40db-b561-2fdc6463a6f0_1600x600_crop_center.png?v=1631814814&quot"
                 />
               </div>
               <div className="w-full p-1 md:p-2">
                 <img
                   alt="gallery"
-                  className="block object-cover object-center w-full h-full"
+                  className="block object-cover object-center w-full h-full rounded"
                   src="https://kono.store/cdn/shop/files/Discord---Banner---2_2000x800_crop_center.jpg?v=1660947236"
                 />
               </div>
@@ -45,21 +45,21 @@ const Gallery = () => {
               <div className="w-full p-1 md:p-2">
                 <img
                   alt="gallery"
-                  className="block object-cover object-center w-full h-full"
+                  className="block object-cover object-center w-full h-full rounded"
                   src="https://rb.gy/n2momw"
                 />
               </div>
               <div className="w-1/2 p-1 md:p-2">
                 <img
                   alt="gallery"
-                  className="block object-cover object-center w-full h-full"
+                  className="block object-cover object-center w-full h-full rounded"
                   src="https://media.istockphoto.com/id/1356366044/photo/black-mechanical-keyboard-on-white-background-blue-neon-light.jpg?b=1&s=612x612&w=0&k=20&c=1eoGhUEtkFdg9N4YnzCQlwxKhRBFFOLVgFEbDVXLecE="
                 />
               </div>
               <div className="w-1/2 p-1 md:p-2">
                 <img
                   alt="gallery"
-                  className="block object-cover object-center w-full h-full"
+                  className="block object-cover object-center w-full h-full rounded"
                   src="https://rb.gy/07zfan"
                 />
               </div>

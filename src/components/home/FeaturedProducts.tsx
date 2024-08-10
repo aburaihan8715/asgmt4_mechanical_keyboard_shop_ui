@@ -7,7 +7,8 @@ import { useGetAllProductsQuery } from '@/redux/features/product/productApi';
 import { TProduct } from '@/types';
 
 const FeaturedProducts = () => {
-  const { data } = useGetAllProductsQuery(undefined);
+  const { data } = useGetAllProductsQuery({});
+
   return (
     <section className="px-10 py-20 border-b">
       <SectionHeading heading="Featured Products" />
