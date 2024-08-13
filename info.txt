@@ -72,3 +72,10 @@ image,
 8.https://rb.gy/sd0bmy
 9.https://shorturl.at/rb76S
 10.https://shorturl.at/on5kh
+
+
+
+
+
+// Pending 
+1. loading implementation

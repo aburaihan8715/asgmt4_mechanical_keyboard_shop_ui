@@ -3,7 +3,11 @@ import { FaCartShopping } from 'react-icons/fa6';
 import { Button } from '../ui/button';
 import ActiveLink from '../ui/ActiveLink';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '@/redux/hooks';
 const Header = () => {
+  const cartData = useAppSelector((state) => state.cart);
+  const products = cartData?.products;
+
   return (
     <header className="flex bg-[#e9effd] justify-between h-[80px] items-center px-10">
       {/* LOGO */}
@@ -38,7 +42,7 @@ const Header = () => {
             <div className="relative mr-2">
               <FaCartShopping className="text-base text-[#212529]" />
               <span className="absolute flex items-center justify-center w-5 h-5 font-semibold rounded-full bg-primary text-[#f8f9fa] -top-3 left-3">
-                2
+                {products.length || 0}
               </span>
             </div>
           </Link>

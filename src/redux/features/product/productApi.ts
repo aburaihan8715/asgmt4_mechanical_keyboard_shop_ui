@@ -2,6 +2,7 @@ import { baseApi } from '@/redux/api/baseApi';
 
 const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
+    // GET ALL
     getAllProducts: builder.query({
       query: ({ minPrice, maxPrice, sortByPrice, search }) => {
         let queryString = `/products`;
@@ -21,7 +22,17 @@ const authApi = baseApi.injectEndpoints({
         };
       },
     }),
+
+    // GET ONE
+    getProduct: builder.query({
+      query: (id) => {
+        return {
+          url: `/products/${id}`,
+          method: 'GET',
+        };
+      },
+    }),
   }),
 });
 
-export const { useGetAllProductsQuery } = authApi;
+export const { useGetAllProductsQuery, useGetProductQuery } = authApi;

@@ -1,6 +1,7 @@
 import ProductsCard from '@/components/products/ProductsCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import SectionHeading from '@/components/ui/SectionHeading';
 import {
   Select,
@@ -27,7 +28,7 @@ const Products = () => {
   const [sortByPrice, setSortByPrice] = useState('');
   const [minPrice, maxPrice] = filterByPriceRange.split('-');
 
-  const { data } = useGetAllProductsQuery({
+  const { data, isLoading } = useGetAllProductsQuery({
     search,
     minPrice,
     maxPrice,
@@ -39,6 +40,9 @@ const Products = () => {
     setSortByPrice('');
     setFilterByPriceRange('');
   };
+
+  if (isLoading) return <LoadingSpinner />;
+
   return (
     <section className="py-20">
       <SectionHeading heading="All Products" />

@@ -27,14 +27,19 @@ const ProductsCard = ({ item }: { item: TProduct }) => {
             {item.title}
           </h3>
           <p>Brand: {item.brand}</p>
-          <p>Quantity: {item.availableQuantity}</p>
+          <p>
+            Stock:{' '}
+            {item.availableQuantity
+              ? item.availableQuantity
+              : 'Out of Stock'}
+          </p>
           <p>Price: $ {item.price}</p>
 
           <Rating style={{ maxWidth: 120 }} value={item.rating} readOnly />
         </div>
 
         <div>
-          <Link to="/product-details">
+          <Link to={`/product-details/${item._id}`}>
             <Button className="w-full">Show details</Button>
           </Link>
         </div>
