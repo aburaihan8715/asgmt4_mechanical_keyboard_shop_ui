@@ -48,9 +48,7 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <Link to="/login">
-            <Button>Login</Button>
-          </Link>
+          <Button onClick={() => alert('Not implement yet')}>Login</Button>
         </div>
         <div>
           <img

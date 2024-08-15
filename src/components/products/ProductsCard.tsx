@@ -7,7 +7,7 @@ const ProductsCard = ({ item }: { item: TProduct }) => {
   return (
     <div
       data-aos="zoom-in"
-      className="min-h-[350px] bg-[#e9effd] border p-5 rounded flex flex-col gap-4"
+      className="min-h-[350px] bg-[#e9effd] border p-5 rounded flex flex-col gap-4 hover:shadow-lg hover:scale-[0.98] transition-transform duration-300 ease-in-out"
     >
       <div>
         <img

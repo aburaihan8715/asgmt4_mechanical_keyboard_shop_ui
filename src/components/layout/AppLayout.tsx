@@ -2,8 +2,10 @@ import Header from './Header';
 import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 import ScrollToTop from 'react-scroll-to-top';
+import usePageRefreshAlert from '@/hooks/usePageRefreshAlert';
 
 const AppLayout = () => {
+  usePageRefreshAlert();
   return (
     <>
       <Header />

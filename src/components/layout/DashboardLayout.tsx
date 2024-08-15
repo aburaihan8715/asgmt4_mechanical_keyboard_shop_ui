@@ -1,8 +1,10 @@
 import { Link, Outlet } from 'react-router-dom';
 import Sidebar from '../dashboard/Sidebar';
 import BrandLogo from '../ui/BrandLogo';
+import usePageRefreshAlert from '@/hooks/usePageRefreshAlert';
 
 const DashboardLayout = () => {
+  usePageRefreshAlert();
   return (
     <div className="flex">
       <div className="flex-1 h-screen sticky bottom-0 top-0 ">

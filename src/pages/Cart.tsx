@@ -5,7 +5,7 @@ import { TProduct } from '@/types';
 import {
   decrementQuantity,
   incrementQuantity,
-  removeProduct,
+  removeFromCart,
 } from '@/redux/features/cart/cartSlice';
 import { Link } from 'react-router-dom';
 
@@ -61,9 +61,17 @@ const Cart = () => {
             </div>
 
             <div>
-              <Link to={`/checkout`}>
-                <Button className="w-full">Checkout Now</Button>
-              </Link>
+              {cart.products.length < 1 ? (
+                <div className="w-full cursor-not-allowed">
+                  <Button disabled className="w-full cursor-not-allowed">
+                    Checkout Now
+                  </Button>
+                </div>
+              ) : (
+                <Link to={`/checkout`} className="w-full">
+                  <Button className="w-full">Checkout Now</Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -95,7 +103,7 @@ const CartProduct = ({ product }: CartProductProps) => {
 
   const handleRemoveProduct = (id: string) => {
     if (id) {
-      dispatch(removeProduct(id));
+      dispatch(removeFromCart(id));
     }
   };
 

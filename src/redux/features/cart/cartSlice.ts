@@ -17,7 +17,7 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<TProduct>) => {
+    addToCart: (state, action: PayloadAction<TProduct>) => {
       const product = action.payload;
       const productQuantity = product.quantity ?? 1;
 
@@ -48,7 +48,7 @@ const cartSlice = createSlice({
       }
     },
 
-    removeProduct: (state, action: PayloadAction<string>) => {
+    removeFromCart: (state, action: PayloadAction<string>) => {
       const product = state.products.find(
         (item) => item._id === action.payload
       );
@@ -63,13 +63,19 @@ const cartSlice = createSlice({
         );
       }
     },
+    completedOrder: (state) => {
+      state.products = [];
+      state.quantity = 0;
+      state.total = 0;
+    },
   },
 });
 
 export const {
-  addProduct,
+  addToCart,
   incrementQuantity,
   decrementQuantity,
-  removeProduct,
+  removeFromCart,
+  completedOrder,
 } = cartSlice.actions;
 export default cartSlice.reducer;

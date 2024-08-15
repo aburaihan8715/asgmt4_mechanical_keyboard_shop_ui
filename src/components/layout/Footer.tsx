@@ -35,7 +35,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-[#212529] hover:text-gray-800"
+                  className="text-[#212529] hover:text-gray-800 hover:underline hover:scale-105 transition-transform duration-150"
                 >
                   Home
                 </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/products"
-                  className="text-[#212529] hover:text-gray-800"
+                  className="text-[#212529] hover:text-gray-800 hover:underline hover:scale-105 transition-transform duration-150"
                 >
                   Products
                 </Link>
@@ -51,7 +51,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/dashboard"
-                  className="text-[#212529] hover:text-gray-800"
+                  className="text-[#212529] hover:text-gray-800 hover:underline hover:scale-105 transition-transform duration-150"
                 >
                   Dashboard
                 </Link>
@@ -68,7 +68,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/about"
-                  className="text-[#212529] hover:text-gray-800"
+                  className="text-[#212529] hover:text-gray-800 hover:underline hover:scale-105 transition-transform duration-150"
                 >
                   About us
                 </Link>
@@ -76,7 +76,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-[#212529] hover:text-gray-800"
+                  className="text-[#212529] hover:text-gray-800 hover:underline hover:scale-105 transition-transform duration-150"
                 >
                   Contact us
                 </Link>
@@ -117,16 +117,36 @@ const Footer = () => {
 
           {/* SOCIAL LINKS */}
           <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
-            <a className="ml-3 text-[#212529]">
+            <a
+              href="https://www.facebook.com/yourpage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-3 text-[#212529]"
+            >
               <FacebookIcon />
             </a>
-            <a className="ml-3 text-[#212529]">
+            <a
+              href="https://www.twitter.com/yourhandle"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-3 text-[#212529]"
+            >
               <TwitterIcon />
             </a>
-            <a className="ml-3 text-[#212529]">
+            <a
+              href="https://www.instagram.com/yourhandle"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-3 text-[#212529]"
+            >
               <InstagramIcon />
             </a>
-            <a className="ml-3 text-[#212529]">
+            <a
+              href="https://www.linkedin.com/in/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-3 text-[#212529]"
+            >
               <LinkedinIcon />
             </a>
           </span>

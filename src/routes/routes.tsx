@@ -15,6 +15,7 @@ import Login from '@/pages/Login';
 import Dashboard from '@/pages/Dashboard';
 import EditProduct from '@/pages/dashboard/EditProduct';
 import Register from '@/pages/Register';
+import Success from '@/pages/Success';
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,11 @@ export const router = createBrowserRouter([
       {
         path: 'products',
         element: <Products />,
+      },
+
+      {
+        path: '/success',
+        element: <Success />,
       },
     ],
   },

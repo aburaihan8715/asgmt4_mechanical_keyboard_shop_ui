@@ -2,7 +2,6 @@ import { baseApi } from '@/redux/api/baseApi';
 
 const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    // GET ALL
     getAllProducts: builder.query({
       query: ({ minPrice, maxPrice, sortByPrice, search }) => {
         let queryString = `/products`;
@@ -21,6 +20,9 @@ const authApi = baseApi.injectEndpoints({
           method: 'GET',
         };
       },
+
+      keepUnusedDataFor: 0,
+      providesTags: ['products'],
     }),
 
     // GET ONE
@@ -32,7 +34,49 @@ const authApi = baseApi.injectEndpoints({
         };
       },
     }),
+
+    // CREATE ONE
+    createProduct: builder.mutation({
+      query: (data) => {
+        return {
+          url: '/products',
+          method: 'POST',
+          body: data,
+        };
+      },
+      invalidatesTags: ['products'],
+    }),
+
+    // DELETE ONE
+    deleteProduct: builder.mutation({
+      query: (id) => {
+        return {
+          url: `/products/${id}`,
+          method: 'DELETE',
+        };
+      },
+      invalidatesTags: ['products'],
+    }),
+
+    // UPDATE ONE
+    updateProduct: builder.mutation({
+      query: (options) => {
+        // console.log(options);
+        return {
+          url: `/products/${options.id}`,
+          method: 'PATCH',
+          body: options.data,
+        };
+      },
+      invalidatesTags: ['products'],
+    }),
   }),
 });
 
-export const { useGetAllProductsQuery, useGetProductQuery } = authApi;
+export const {
+  useGetAllProductsQuery,
+  useGetProductQuery,
+  useCreateProductMutation,
+  useDeleteProductMutation,
+  useUpdateProductMutation,
+} = authApi;

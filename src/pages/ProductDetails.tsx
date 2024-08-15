@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
-import { addProduct } from '@/redux/features/cart/cartSlice';
+import { addToCart } from '@/redux/features/cart/cartSlice';
 import { useGetProductQuery } from '@/redux/features/product/productApi';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { TProduct } from '@/types';
@@ -24,7 +24,7 @@ const ProductDetails = () => {
 
     if (isAlreadyAdded) return alert('Product already added!');
 
-    dispatch(addProduct({ ...product, quantity: 1 }));
+    dispatch(addToCart({ ...product, quantity: 1 }));
   };
 
   if (isLoading) return <LoadingSpinner />;
