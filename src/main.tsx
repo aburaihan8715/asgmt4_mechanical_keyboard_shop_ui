@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
+import { Toaster } from 'sonner';
 // FOR AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -16,5 +17,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ReduxProvider store={store}>
       <RouterProvider router={router} />
     </ReduxProvider>
+    <Toaster />
   </React.StrictMode>
 );

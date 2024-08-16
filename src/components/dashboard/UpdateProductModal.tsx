@@ -35,6 +35,7 @@ const UpdateProductModal = ({ id }: { id: string }) => {
 export default UpdateProductModal;
 
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { toast } from 'sonner';
 
 type FormValues = {
   title: string;
@@ -63,9 +64,7 @@ const UpdateForm = ({
   product: TUpdateFormProps;
   id: string;
 }) => {
-  const { register, handleSubmit } = useForm<FormValues>({
-    mode: 'onChange',
-  });
+  const { register, handleSubmit, reset } = useForm<FormValues>();
 
   const [updateProduct] = useUpdateProductMutation();
 
@@ -81,22 +80,24 @@ const UpdateForm = ({
       brand: data?.brand || product.brand,
       description: data?.description || product.description,
     };
-    // console.log(updatedProductData);
-    await updateProduct({
-      id,
-      data: updatedProductData,
-    });
-    // reset();
+    const toastId = toast.loading('Loading...');
+    try {
+      await updateProduct({
+        id,
+        data: updatedProductData,
+      });
+      toast.success('Product has been updated!', {
+        id: toastId,
+        duration: 2000,
+      });
+      reset();
+    } catch (error) {
+      toast.error('Something went wrong!', {
+        id: toastId,
+        duration: 2000,
+      });
+    }
   };
-
-  // updateTodo({
-  //   id,
-  //   data: {
-  //     title: task ? task : todo.title,
-  //     description: description ? description : todo.description,
-  //     priority: priority ? priority : todo.priority,
-  //   },
-  // });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

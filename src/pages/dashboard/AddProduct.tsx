@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { useCreateProductMutation } from '@/redux/features/product/productApi';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { toast } from 'sonner';
 
 type FormValues = {
   title: string;
@@ -26,9 +27,20 @@ const AddProduct = () => {
   const [createProduct] = useCreateProductMutation();
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    // console.log(data);
-    await createProduct(data);
-    reset();
+    const toastId = toast.loading('Loading...');
+    try {
+      await createProduct(data);
+      toast.success('Product has been created!', {
+        id: toastId,
+        duration: 2000,
+      });
+      reset();
+    } catch (error) {
+      toast.error('Something went wrong!', {
+        id: toastId,
+        duration: 2000,
+      });
+    }
   };
 
   return (
@@ -185,7 +197,7 @@ const AddProduct = () => {
 
             <div className="">
               <Button className="w-full" type="submit">
-                Add Product
+                Submit
               </Button>
             </div>
           </div>

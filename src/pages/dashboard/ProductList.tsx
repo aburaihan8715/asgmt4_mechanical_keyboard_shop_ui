@@ -1,5 +1,6 @@
 'use client';
 
+import Swal from 'sweetalert2';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import {
   ColumnDef,
@@ -71,10 +72,6 @@ const ProductList = () => {
     useState<VisibilityState>({});
 
   const [rowSelection, setRowSelection] = useState({});
-
-  const handleDelete = (id: string) => {
-    deleteProduct(id);
-  };
 
   const columns: ColumnDef<TProductList>[] = [
     {
@@ -169,6 +166,27 @@ const ProductList = () => {
       pagination,
     },
   });
+
+  const handleDelete = async (id: string) => {
+    const result = await Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    });
+
+    if (result.isConfirmed) {
+      await deleteProduct(id);
+      await Swal.fire({
+        title: 'Deleted!',
+        text: 'Product has been deleted.',
+        icon: 'success',
+      });
+    }
+  };
 
   if (isLoading) return <LoadingSpinner />;
 
