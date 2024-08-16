@@ -10,17 +10,17 @@ const date = new Date().toDateString().slice(4);
 
 const Footer = () => {
   return (
-    <footer className="text-[#212529] bg-[#e9effd] px-10">
-      <div className="flex flex-col flex-wrap gap-10 px-5 py-24 mx-auto border-b-2 md:items-center lg:items-start md:flex-row md:flex-nowrap">
+    <footer className="text-[#212529] bg-[#e9effd] md:px-10 px-1">
+      <div className="flex flex-col flex-wrap gap-10 p-1 py-24 mx-auto border-b-2 md:px-5 md:items-center lg:items-start md:flex-row md:flex-nowrap">
         {/* BRAND LOGO */}
-        <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
+        <div className="flex-shrink-0 w-full md:w-64 mx-auto text-center md:mx-0 md:text-left">
           <Link
             to="/"
             className="flex items-center justify-center font-medium text-[#212529] title-font md:justify-start"
           >
             <BrandLogo />
           </Link>
-          <p className="mt-4 text-sm text-[#212529]">
+          <p className="mt-4 text-wrap text-sm text-[#212529]">
             A great keyboard is a symphony for your fingers
           </p>
         </div>

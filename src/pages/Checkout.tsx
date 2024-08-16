@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 type FormData = {
   name: string;
@@ -37,6 +38,7 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState('');
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
+    const toastId = toast.loading('Loading...');
     try {
       await createOrder({
         totalAmount: cart.total,
@@ -49,20 +51,27 @@ const Checkout = () => {
       }).unwrap();
 
       dispatch(completedOrder());
+      toast.success('Product has been created!', {
+        id: toastId,
+        duration: 2000,
+      });
 
       navigate('/success');
     } catch (error) {
-      console.error('Order creation failed:', error);
+      toast.error('Something went wrong!', {
+        id: toastId,
+        duration: 2000,
+      });
     }
   };
 
   return (
-    <section className="py-20">
+    <section className="md:py-20 py-10 px-1">
       <SectionHeading heading="Payment" />
 
       <div className="flex justify-center">
         <Select value={paymentMethod} onValueChange={setPaymentMethod}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="md:w-[180px] w-full">
             <SelectValue placeholder="Select Payment Method" />
           </SelectTrigger>
           <SelectContent>
@@ -78,9 +87,9 @@ const Checkout = () => {
       </div>
 
       {paymentMethod === 'cash-on-delivery' && (
-        <div className="flex justify-center mt-10">
+        <div className="md:flex justify-center mt-10">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="space-y-4 w-96">
+            <div className="space-y-4 md:w-96 w-full">
               <div className="flex flex-col gap-2">
                 <label htmlFor="name">Name</label>
                 <input
@@ -178,7 +187,7 @@ const Checkout = () => {
 
       {paymentMethod === 'stripe' && (
         <div className="h-[40vh] flex justify-center items-center">
-          <p className="text-4xl font-medium text-green-400">
+          <p className="text-center text-3xl font-bold text-transparent text-gray-900 sm:2xl border-primary title-font md:text-4xl bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text">
             Stripe Not Implemented Yet!!
           </p>
         </div>

@@ -30,8 +30,8 @@ const ProductDetails = () => {
   if (isLoading) return <LoadingSpinner />;
 
   return (
-    <section className="h-[90vh] px-10 py-20">
-      <div className="flex h-full gap-10">
+    <section className="md:h-[90vh] h-full md:px-10 px-1 md:py-20 py-10">
+      <div className="flex flex-col md:flex-row h-full gap-10">
         <div className="flex-1 h-full">
           <img
             className="object-cover w-full h-full rounded"
@@ -42,7 +42,7 @@ const ProductDetails = () => {
           />
         </div>
 
-        <div className="flex-[2] flex flex-col gap-5">
+        <div className="flex-[2] flex flex-col md:gap-5 gap-2">
           <h1 className="text-3xl font-medium text-[#212529]">
             {product?.title}
           </h1>

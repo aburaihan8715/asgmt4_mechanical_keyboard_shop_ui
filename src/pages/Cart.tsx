@@ -13,14 +13,14 @@ const Cart = () => {
   const cart = useAppSelector((state) => state.cart);
 
   return (
-    <section className="px-10 py-20">
+    <section className="md:px-10 px-1 md:py-20 py-10">
       <SectionHeading heading="Your Bag" />
       <div className="mb-5">
         <Link to="/products">
           <Button>Continue Shopping</Button>
         </Link>
       </div>
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         <ul className="flex-[4] flex flex-col border rounded justify-center">
           {cart.products.length > 0 &&
             cart.products?.map((product) => (
@@ -28,14 +28,14 @@ const Cart = () => {
             ))}
 
           {cart.products.length < 1 && (
-            <h3 className="w-full text-3xl font-semibold text-center">
+            <h3 className="text-center text-3xl font-bold text-transparent text-gray-900 sm:2xl border-primary title-font md:text-4xl bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text">
               No Product Added Yet!!
             </h3>
           )}
         </ul>
 
         <div className="flex-[1]">
-          <div className="p-5 space-y-2 border rounded-md">
+          <div className="md:p-5 p-1 space-y-2 border rounded-md">
             <h4 className="text-2xl font-medium text-gray-700">
               Order Summary
             </h4>
@@ -108,17 +108,19 @@ const CartProduct = ({ product }: CartProductProps) => {
   };
 
   return (
-    <li className="flex items-center justify-between h-full gap-10 p-5 border-b">
+    <li className="flex flex-col md:flex-row items-center justify-between h-full gap-10 border-b">
       <div className="">
         <img
-          className="w-[200px] h-[200px] object-cover rounded"
+          className="md:w-[200px] w-full h-[200px] object-cover rounded"
           src={product.image ? product.image : 'https://shorturl.at/on5kh'}
           alt={product.title}
         />
       </div>
 
       <div className="flex flex-col flex-1 gap-4">
-        <h4 className="text-3xl font-medium">{product.title}</h4>
+        <h4 className="md:text-3xl text-xl font-medium">
+          {product.title}
+        </h4>
         <div className="flex items-center gap-2">
           <button
             onClick={() => handleDecrement(product._id)}
@@ -136,13 +138,16 @@ const CartProduct = ({ product }: CartProductProps) => {
             +
           </button>
         </div>
-        <div className="text-3xl text-gray-700">
+        <div className="md:text-3xl text-xl text-gray-700">
           $ {(product.price * (product.quantity ?? 1)).toFixed(2)}
         </div>
       </div>
 
-      <div>
-        <Button onClick={() => handleRemoveProduct(product._id)}>
+      <div className="w-full md:w-auto">
+        <Button
+          className="w-full md:w-auto md:mr-20 mr-1"
+          onClick={() => handleRemoveProduct(product._id)}
+        >
           Remove
         </Button>
       </div>

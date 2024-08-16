@@ -9,7 +9,9 @@ const AppLayout = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="mt-20">
+        <Outlet />
+      </div>
       <Footer />
       <ScrollToTop
         style={{

@@ -47,8 +47,8 @@ const AddProduct = () => {
     <section className="">
       <SectionHeading heading="Add Product" />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="px-20 space-y-5">
-          <div className="grid grid-cols-2 gap-x-10 gap-y-5">
+        <div className="md:px-20 px-1 space-y-5">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-5">
             <div className="flex flex-col gap-2">
               <label htmlFor="title">Title</label>
               <input

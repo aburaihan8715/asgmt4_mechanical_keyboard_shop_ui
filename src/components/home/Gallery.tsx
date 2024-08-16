@@ -2,12 +2,12 @@ import SectionHeading from '../ui/SectionHeading';
 
 const Gallery = () => {
   return (
-    <section className="pb-20">
+    <section className="pb-10 md:pb-20">
       <SectionHeading heading="Gallery" />
       <div className="text-gray-600 body-font">
-        <div className="container flex flex-wrap px-10 mx-auto">
-          <div className="flex flex-wrap w-full mb-20">
-            <h1 className="mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font lg:w-1/3 lg:mb-0">
+        <div className="flex flex-wrap px-1 md:px-10">
+          <div className="flex flex-wrap w-full mb-10 md:mb-20">
+            <h1 className="mb-4 text-xl font-medium text-gray-900 md:text-2xl sm:text-3xl title-font lg:w-1/3 lg:mb-0">
               The Art and Engineering of Mechanical Keyboards
             </h1>
             <p className="mx-auto text-base leading-relaxed lg:pl-6 lg:w-2/3">

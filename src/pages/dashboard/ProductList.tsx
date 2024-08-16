@@ -36,13 +36,13 @@ import {
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 
-import { FaRegTrashCan } from 'react-icons/fa6';
 import {
   useDeleteProductMutation,
   useGetAllProductsQuery,
 } from '@/redux/features/product/productApi';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import UpdateProductModal from '@/components/dashboard/UpdateProductModal';
+import { FaRegTrashCan } from 'react-icons/fa6';
 
 export type TProductList = {
   _id: string;
@@ -136,6 +136,10 @@ const ProductList = () => {
         return (
           <div className="flex items-center gap-4">
             <UpdateProductModal id={id} />
+            {/* <FaPenToSquare
+              onClick={() => setOpenModal(!openModal)}
+              className="text-xl text-primary"
+            /> */}
 
             <button onClick={() => handleDelete(id)}>
               <FaRegTrashCan className="text-xl text-red-500" />
@@ -194,7 +198,7 @@ const ProductList = () => {
     <>
       <section>
         <div className="w-full">
-          <div className="flex items-center py-4">
+          <div className="flex flex-col gap-2 md:flex-row items-center py-4">
             {/* search input */}
             <Input
               placeholder="Filter product name..."
@@ -213,7 +217,10 @@ const ProductList = () => {
             {/* field filter */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="ml-auto">
+                <Button
+                  variant="outline"
+                  className="ml-auto w-full md:w-auto"
+                >
                   Columns <ChevronDownIcon className="w-4 h-4 ml-2" />
                 </Button>
               </DropdownMenuTrigger>
@@ -293,7 +300,7 @@ const ProductList = () => {
 
           {/* pagination */}
           <div className="flex items-center justify-end py-4 space-x-2">
-            <div className="flex-1 text-sm text-muted-foreground">
+            <div className="md:flex-1 md:block hidden text-sm text-muted-foreground">
               {table.getFilteredSelectedRowModel().rows.length} of{' '}
               {table.getFilteredRowModel().rows.length} row(s) selected.
             </div>

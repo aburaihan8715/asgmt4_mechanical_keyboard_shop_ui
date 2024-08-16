@@ -44,9 +44,9 @@ const Products = () => {
   if (isLoading) return <LoadingSpinner />;
 
   return (
-    <section className="py-20">
+    <section className="md:py-20 py-10">
       <SectionHeading heading="All Products" />
-      <div className="flex justify-between gap-10 px-10 mb-5">
+      <div className=" flex flex-col md:flex-row justify-between gap-4 md:gap-10 md:px-10 px-2 mb-5">
         <div className="flex-1">
           <Input
             onChange={(e) => debounced(e.target.value)}
@@ -61,7 +61,7 @@ const Products = () => {
             value={filterByPriceRange}
             onValueChange={setFilterByPriceRange}
           >
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="md:w-[180px] w-full">
               <SelectValue placeholder="Select price range" />
             </SelectTrigger>
             <SelectContent>
@@ -76,7 +76,7 @@ const Products = () => {
         </div>
         <div className="flex-1">
           <Select value={sortByPrice} onValueChange={setSortByPrice}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="md:w-[180px] w-full">
               <SelectValue placeholder="Select price" />
             </SelectTrigger>
             <SelectContent>
@@ -89,11 +89,13 @@ const Products = () => {
           </Select>
         </div>
         <div>
-          <Button onClick={handleClearFilter}>Clear filter</Button>
+          <Button className="md:w-auto w-full" onClick={handleClearFilter}>
+            Clear filter
+          </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-10 px-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 px-1 md:px-10">
         {data?.data?.map((item: TProduct) => (
           <ProductsCard key={item._id} item={item} />
         ))}

@@ -26,7 +26,9 @@ const UpdateProductModal = ({ id }: { id: string }) => {
           <DialogTitle className="text-center">Edit Product</DialogTitle>
           <DialogDescription />
         </DialogHeader>
-        <UpdateForm product={product} id={id} />
+        <div className="max-h-[80vh] overflow-auto">
+          <UpdateForm product={product} id={id} />
+        </div>
       </DialogContent>
     </Dialog>
   );
@@ -102,7 +104,7 @@ const UpdateForm = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="space-y-5">
-        <div className="grid grid-cols-2 gap-x-10 gap-y-5">
+        <div className="grid grid-cols-2 md:gap-x-10 gap-x-1 gap-y-5">
           <div className="flex flex-col gap-2">
             <label htmlFor="title">Title</label>
             <input
@@ -140,7 +142,7 @@ const UpdateForm = ({
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="availableQuantity">Available Quantity</label>
+            <label htmlFor="availableQuantity">Quantity</label>
             <input
               className="w-full px-3 py-2 border border-gray-300 rounded outline-none"
               type="number"

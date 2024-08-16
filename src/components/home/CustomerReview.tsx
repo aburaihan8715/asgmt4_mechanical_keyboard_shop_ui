@@ -9,7 +9,7 @@ import SectionHeading from '../ui/SectionHeading';
 
 const CustomerReview = () => {
   return (
-    <section className="py-20 pb-20">
+    <section className="py-20 pb-10 md:pb-20">
       <SectionHeading heading="Customer Reviews" />
       <div
         className="bg-center bg-no-repeat bg-cover"
@@ -50,10 +50,10 @@ const CustomerReview = () => {
                     readOnly
                   />
 
-                  <p className="text-[#f8f9fa] opacity-80">
+                  <p className="text-[#f8f9fa] opacity-80 md:text-xl text-[14px]">
                     {item.review}
                   </p>
-                  <p className="text-xl font-semibold text-[#f8f9fa]">
+                  <p className="md:text-xl text-[14px] font-semibold text-[#f8f9fa]">
                     -{item.name}
                   </p>
                 </div>

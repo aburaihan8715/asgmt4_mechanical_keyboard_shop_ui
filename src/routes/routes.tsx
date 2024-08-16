@@ -12,7 +12,7 @@ import Home from '@/pages/Home';
 import ProductList from '@/pages/dashboard/ProductList';
 import AddProduct from '@/pages/dashboard/AddProduct';
 import Login from '@/pages/Login';
-import Dashboard from '@/pages/Dashboard';
+import Dashboard from '@/pages/dashboard/Dashboard';
 import Register from '@/pages/Register';
 import Success from '@/pages/Success';
 

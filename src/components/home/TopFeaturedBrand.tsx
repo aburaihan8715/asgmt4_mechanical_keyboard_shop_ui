@@ -13,19 +13,19 @@ import brand10 from '../../assets/images/brandLogos/10.png';
 
 const TopFeaturedBrand = () => {
   return (
-    <section className="py-20 pb-20 border-b">
+    <section className="py-20 pb-10 border-b md:pb-20">
       <SectionHeading heading="Tob Feature Brand" />
       <Marquee>
-        <img src={brand1} alt="" />
-        <img src={brand2} alt="" />
-        <img src={brand3} alt="" />
-        <img src={brand4} alt="" />
-        <img src={brand5} alt="" />
-        <img src={brand6} alt="" />
-        <img src={brand7} alt="" />
-        <img src={brand8} alt="" />
-        <img src={brand9} alt="" />
-        <img src={brand10} alt="" />
+        <img className="md:w-full w-[100px]" src={brand1} alt="" />
+        <img className="md:w-full w-[100px]" src={brand2} alt="" />
+        <img className="md:w-full w-[100px]" src={brand3} alt="" />
+        <img className="md:w-full w-[100px]" src={brand4} alt="" />
+        <img className="md:w-full w-[100px]" src={brand5} alt="" />
+        <img className="md:w-full w-[100px]" src={brand6} alt="" />
+        <img className="md:w-full w-[100px]" src={brand7} alt="" />
+        <img className="md:w-full w-[100px]" src={brand8} alt="" />
+        <img className="md:w-full w-[100px]" src={brand9} alt="" />
+        <img className="md:w-full w-[100px]" src={brand10} alt="" />
       </Marquee>
     </section>
   );

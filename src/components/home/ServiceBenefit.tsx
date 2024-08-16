@@ -4,9 +4,9 @@ import SectionHeading from '../ui/SectionHeading';
 
 const ServiceBenefit = () => {
   return (
-    <section className="pb-20 border-b">
+    <section className="pb-10 border-b md:pb-20">
       <SectionHeading heading="Services Benefits" />
-      <div className="grid grid-cols-4 gap-10 px-10">
+      <div className="grid grid-cols-1 gap-10 px-1 md:px-10 md:grid-cols-4">
         {serviceBenefitData?.map((item) => (
           <ServiceCard key={item.id} item={item} />
         ))}
