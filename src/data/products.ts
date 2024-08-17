@@ -10,6 +10,8 @@ export const products: TProduct[] = [
     rating: 4.7,
     description:
       'Experience the precision and comfort of the Tactile Pro, a mechanical keyboard designed for both productivity and gaming enthusiasts.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'RGB Backlit Gaming Keyboard',
@@ -20,6 +22,8 @@ export const products: TProduct[] = [
     rating: 4.5,
     description:
       'Illuminate your gaming setup with the Corsair RGB Backlit Gaming Keyboard, offering customizable lighting and high performance.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'Compact Wireless Mechanical Keyboard',
@@ -30,6 +34,8 @@ export const products: TProduct[] = [
     rating: 4.6,
     description:
       'The Anne Pro Compact Wireless Mechanical Keyboard delivers a sleek and portable design without compromising on quality and functionality.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'Ergonomic Split Mechanical Keyboard',
@@ -40,6 +46,8 @@ export const products: TProduct[] = [
     rating: 4.8,
     description:
       'Reduce strain and improve your typing posture with the Kinesis Ergonomic Split Mechanical Keyboard, perfect for long hours at the desk.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'Minimalist Mechanical Keyboard',
@@ -50,6 +58,8 @@ export const products: TProduct[] = [
     rating: 4.4,
     description:
       'Simplicity meets efficiency in the Ducky Minimalist Mechanical Keyboard, offering a clean design and reliable performance.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'High-Performance Gaming Keyboard',
@@ -60,6 +70,8 @@ export const products: TProduct[] = [
     rating: 4.7,
     description:
       'Enhance your gaming experience with the Razer High-Performance Gaming Keyboard, featuring responsive switches and customizable macros.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'Customizable Mechanical Keyboard',
@@ -70,6 +82,8 @@ export const products: TProduct[] = [
     rating: 4.6,
     description:
       'Personalize your typing experience with the Glorious Customizable Mechanical Keyboard, offering hot-swappable switches and endless configuration options.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'Silent Mechanical Keyboard',
@@ -80,6 +94,8 @@ export const products: TProduct[] = [
     rating: 4.5,
     description:
       'Enjoy a quiet yet powerful typing experience with the Logitech Silent Mechanical Keyboard, perfect for shared workspaces.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'Portable Mechanical Keyboard',
@@ -90,6 +106,8 @@ export const products: TProduct[] = [
     rating: 4.4,
     description:
       'The Vortex Portable Mechanical Keyboard is designed for on-the-go professionals, offering a compact and durable build.',
+    _id: '',
+    quantity: 0,
   },
   {
     title: 'Retro Mechanical Keyboard',
@@ -100,6 +118,8 @@ export const products: TProduct[] = [
     rating: 4.9,
     description:
       'Combine vintage aesthetics with modern functionality in the Azio Retro Mechanical Keyboard, a statement piece for any desk.',
+    _id: '',
+    quantity: 0,
   },
 ];
 
@@ -114,6 +134,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.7,
     description:
       'Experience the precision and comfort of the Tactile Pro, a mechanical keyboard designed for both productivity and gaming enthusiasts.',
+    quantity: 0,
   },
   {
     _id: '2',
@@ -125,6 +146,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.5,
     description:
       'Illuminate your gaming setup with the Corsair RGB Backlit Gaming Keyboard, offering customizable lighting and high performance.',
+    quantity: 0,
   },
   {
     _id: '3',
@@ -136,6 +158,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.6,
     description:
       'The Anne Pro Compact Wireless Mechanical Keyboard delivers a sleek and portable design without compromising on quality and functionality.',
+    quantity: 0,
   },
   {
     _id: '4',
@@ -147,6 +170,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.8,
     description:
       'Reduce strain and improve your typing posture with the Kinesis Ergonomic Split Mechanical Keyboard, perfect for long hours at the desk.',
+    quantity: 0,
   },
   {
     _id: '5',
@@ -158,6 +182,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.4,
     description:
       'Simplicity meets efficiency in the Ducky Minimalist Mechanical Keyboard, offering a clean design and reliable performance.',
+    quantity: 0,
   },
   {
     _id: '6',
@@ -169,6 +194,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.7,
     description:
       'Enhance your gaming experience with the Razer High-Performance Gaming Keyboard, featuring responsive switches and customizable macros.',
+    quantity: 0,
   },
   {
     _id: '7',
@@ -180,6 +206,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.6,
     description:
       'Personalize your typing experience with the Glorious Customizable Mechanical Keyboard, offering hot-swappable switches and endless configuration options.',
+    quantity: 0,
   },
   {
     _id: '8',
@@ -191,6 +218,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.5,
     description:
       'Enjoy a quiet yet powerful typing experience with the Logitech Silent Mechanical Keyboard, perfect for shared workspaces.',
+    quantity: 0,
   },
   {
     _id: '9',
@@ -202,6 +230,7 @@ export const productsWithId: TProduct[] = [
     rating: 4.4,
     description:
       'The Vortex Portable Mechanical Keyboard is designed for on-the-go professionals, offering a compact and durable build.',
+    quantity: 0,
   },
   {
     _id: '10',
@@ -213,5 +242,6 @@ export const productsWithId: TProduct[] = [
     rating: 4.9,
     description:
       'Combine vintage aesthetics with modern functionality in the Azio Retro Mechanical Keyboard, a statement piece for any desk.',
+    quantity: 0,
   },
 ];

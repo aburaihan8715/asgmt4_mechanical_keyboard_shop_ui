@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
 import { Button } from '../ui/button';
+import { Link } from 'react-router-dom';
 
 const TTCarousel = () => {
   return (
@@ -34,7 +35,9 @@ const TTCarousel = () => {
                 </span>
               </div>
               <div>
-                <Button>Buy Now</Button>
+                <Link to="/products">
+                  <Button>Buy Now</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -52,7 +55,9 @@ const TTCarousel = () => {
                 </span>
               </div>
               <div>
-                <Button>Buy Now</Button>
+                <Link to="/products">
+                  <Button>Buy Now</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -70,7 +75,9 @@ const TTCarousel = () => {
                 </span>
               </div>
               <div>
-                <Button>Buy Now</Button>
+                <Link to="/products">
+                  <Button>Buy Now</Button>
+                </Link>
               </div>
             </div>
           </div>
