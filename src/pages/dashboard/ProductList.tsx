@@ -16,8 +16,23 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
+import { useState } from 'react';
+import {
+  useDeleteProductMutation,
+  useGetAllProductsQuery,
+} from '@/redux/features/product/productApi';
+import { Checkbox } from '@/components/ui/checkbox';
+import UpdateProductModal from '@/components/dashboard/UpdateProductModal';
+import { FaRegTrashCan } from 'react-icons/fa6';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import { Input } from '@/components/ui/input';
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-
 import {
   Table,
   TableBody,
@@ -26,23 +41,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Checkbox } from '@/components/ui/checkbox';
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Input } from '@/components/ui/input';
-import { useState } from 'react';
-
-import {
-  useDeleteProductMutation,
-  useGetAllProductsQuery,
-} from '@/redux/features/product/productApi';
-import LoadingSpinner from '@/components/ui/LoadingSpinner';
-import UpdateProductModal from '@/components/dashboard/UpdateProductModal';
-import { FaRegTrashCan } from 'react-icons/fa6';
 
 export type TProductList = {
   _id: string;
