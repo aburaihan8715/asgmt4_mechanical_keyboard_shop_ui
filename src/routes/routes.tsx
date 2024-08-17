@@ -9,12 +9,13 @@ import ProductDetails from '@/pages/ProductDetails';
 import Products from '@/pages/Products';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import Home from '@/pages/Home';
-import ProductList from '@/pages/dashboard/ProductList';
+
 import AddProduct from '@/pages/dashboard/AddProduct';
 import Login from '@/pages/Login';
 import Dashboard from '@/pages/dashboard/Dashboard';
 import Register from '@/pages/Register';
 import Success from '@/pages/Success';
+import ProductList from '@/pages/dashboard/ProductList';
 
 export const router = createBrowserRouter([
   {
