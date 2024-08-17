@@ -136,11 +136,6 @@ const ProductList = () => {
         return (
           <div className="flex items-center gap-4">
             <UpdateProductModal id={id} />
-            {/* <FaPenToSquare
-              onClick={() => setOpenModal(!openModal)}
-              className="text-xl text-primary"
-            /> */}
-
             <button onClick={() => handleDelete(id)}>
               <FaRegTrashCan className="text-xl text-red-500" />
             </button>
