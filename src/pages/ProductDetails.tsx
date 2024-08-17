@@ -32,7 +32,7 @@ const ProductDetails = () => {
   if (isError)
     return (
       <ErrorMessage>
-        <p>Something went wrong!</p>
+        <p className="text-center">Something went wrong!</p>
       </ErrorMessage>
     );
 

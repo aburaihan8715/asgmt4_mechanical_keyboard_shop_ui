@@ -18,7 +18,7 @@ const FeaturedProducts = () => {
         {isLoading && <LoadingSpinner />}
         {isError && (
           <ErrorMessage>
-            <p>Something went wrong!</p>
+            <p className="text-center">Something went wrong!</p>
           </ErrorMessage>
         )}
         {data?.data?.slice(0, 6).map((item: TProduct) => (

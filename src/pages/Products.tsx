@@ -46,7 +46,9 @@ const Products = () => {
   if (isError)
     return (
       <ErrorMessage>
-        <p>Something went wrong!</p>
+        <div className="flex justify-center items-center h-[50vh]">
+          Something went wrong!
+        </div>
       </ErrorMessage>
     );
 
