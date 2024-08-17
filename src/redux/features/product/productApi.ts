@@ -61,7 +61,6 @@ const authApi = baseApi.injectEndpoints({
     // UPDATE ONE
     updateProduct: builder.mutation({
       query: (options) => {
-        // console.log(options);
         return {
           url: `/products/${options.id}`,
           method: 'PATCH',

@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import ErrorMessage from '@/components/ui/ErrorMessage';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import { addToCart } from '@/redux/features/cart/cartSlice';
 import { useGetProductQuery } from '@/redux/features/product/productApi';
@@ -9,7 +10,7 @@ import { useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const { data, isLoading } = useGetProductQuery(id);
+  const { data, isLoading, isError } = useGetProductQuery(id);
   const product = data?.data;
   const dispatch = useAppDispatch();
   const products = useAppSelector((state) => state.cart.products);
@@ -28,6 +29,12 @@ const ProductDetails = () => {
   };
 
   if (isLoading) return <LoadingSpinner />;
+  if (isError)
+    return (
+      <ErrorMessage>
+        <p>Something went wrong!</p>
+      </ErrorMessage>
+    );
 
   return (
     <section className="md:h-[90vh] h-full md:px-10 px-1 md:py-20 py-10">

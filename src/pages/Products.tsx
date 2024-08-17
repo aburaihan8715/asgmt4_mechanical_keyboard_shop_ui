@@ -1,5 +1,6 @@
 import ProductsCard from '@/components/products/ProductsCard';
 import { Button } from '@/components/ui/button';
+import ErrorMessage from '@/components/ui/ErrorMessage';
 import { Input } from '@/components/ui/input';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -28,7 +29,7 @@ const Products = () => {
   const [sortByPrice, setSortByPrice] = useState('');
   const [minPrice, maxPrice] = filterByPriceRange.split('-');
 
-  const { data, isLoading } = useGetAllProductsQuery({
+  const { data, isLoading, isError } = useGetAllProductsQuery({
     search,
     minPrice,
     maxPrice,
@@ -42,6 +43,12 @@ const Products = () => {
   };
 
   if (isLoading) return <LoadingSpinner />;
+  if (isError)
+    return (
+      <ErrorMessage>
+        <p>Something went wrong!</p>
+      </ErrorMessage>
+    );
 
   return (
     <section className="md:py-20 py-10">
