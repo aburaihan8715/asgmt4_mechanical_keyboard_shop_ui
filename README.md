@@ -1,50 +1,48 @@
-# Project Name
+# Project: asgmt4_mechanical_keyboard_shop_ui
+
+## Live link:
+
+https://mechanical-keyboard-asgmt4.netlify.app
+
+## Github link:
+
+https://github.com/aburaihan8715/asgmt4_mechanical_keyboard_shop_ui
+
+## Overview video link:
+
+https://drive.google.com/file/d/1IQm-ez_rhA1Qi3h6AvLohsjTZvhpKXbE/view?usp=sharing
 
 ### Introduction
 
-<p>Brief introduction or tagline about the project.</p>
+<p>The mechanical keyboard project aims to design customizable, high-performance keyboards for enthusiasts and professionals. It focuses on creating keyboards with various mechanical switches, layouts, and features like RGB lighting, offering a personalized and durable typing experience.</p>
 
 ### Project Description
 
-<p>Detailed description of the project, including its purpose and goals.</p>
+<p>The mechanical keyboard project is dedicated to designing and creating highly customizable, premium-quality keyboards that cater to the needs of enthusiasts, gamers, and professionals who demand a superior typing experience. The project’s purpose is to offer keyboards that go beyond the standard mass-market options, providing users with the ability to tailor every aspect of their keyboard to their preferences.</p>
 
 ### Features
 
-- List of key features or functionalities.
-- Bullet points are helpful for clarity.
+- Responsive MERN Stack App, Implementation of Dashboard Management Page.
+- Implemented Redux and Payment with Cash on Delivery
+- Implemented RTK Query for Data Fetching
 
 ### Technology Stack
 
-- List of technologies, frameworks, and tools used in the project.
-- Example: React, Redux, Node.js, MongoDB, etc.
+1. Typescript
+2. React
+3. Tailwind and Shadcn
 
-### Installation Guideline
+### Packages used:
 
-<p>Instructions on how to install, configure, 
-  and get the project running locally.</p>
+1. react router
+2. react icons
+3. redux toolkit
+4. aos animation
+5. react fast marquee
+6. react scroll to top
+7. sonner
+8. sweetalert2
+9. swiper
+10. use-debounce
 
-#### Prerequisites
-
-- List any software or dependencies that need to be installed beforehand (if any).
-
-#### Installation Steps
-
-1. Step-by-step instructions on how to install the project.
-2. Provide code examples or commands for clarity.
-
-#### Configuration
-
-1. Create a `.env` file in the root directory of the project.
-2. Add necessary configuration variables in the `.env` file. Example:
-
-```js
-PORT = 3000;
-DB_URL = your_db_connection_uri;
-API_KEY = your_api_key_here;
-```
-
-3. Explain any specific configuration requirements or variables used in your project.
-
-### Usage
-
-<p>Instructions or examples for using the project. Include screenshots or code snippets if applicable.</p>
+<p>============end=========</p>
