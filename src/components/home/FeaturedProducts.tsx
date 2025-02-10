@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import ProductsCard from '../products/ProductsCard';
 import { Button } from '../ui/button';
 import SectionHeading from '../ui/SectionHeading';
-// import { productsWithId } from '@/data/products';
 import { useGetAllProductsQuery } from '@/redux/features/product/productApi';
 import { TProduct } from '@/types';
 import LoadingSpinner from '../ui/LoadingSpinner';
