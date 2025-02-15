@@ -1,3 +1,4 @@
+import { RootState } from '@/redux/store';
 import { TProduct } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
@@ -79,3 +80,5 @@ export const {
   completedOrder,
 } = cartSlice.actions;
 export default cartSlice.reducer;
+
+export const getCart = (state: RootState) => state.cart;

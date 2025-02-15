@@ -4,7 +4,7 @@ const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getAllProducts: builder.query({
       query: ({ minPrice, maxPrice, sortByPrice, search }) => {
-        let queryString = `/products`;
+        let queryString = `/api/v1/products`;
 
         const params = new URLSearchParams();
 
@@ -29,7 +29,7 @@ const authApi = baseApi.injectEndpoints({
     getProduct: builder.query({
       query: (id) => {
         return {
-          url: `/products/${id}`,
+          url: `/api/v1/products/${id}`,
           method: 'GET',
         };
       },
@@ -39,7 +39,7 @@ const authApi = baseApi.injectEndpoints({
     createProduct: builder.mutation({
       query: (data) => {
         return {
-          url: '/products',
+          url: '/api/v1/products',
           method: 'POST',
           body: data,
         };
@@ -51,7 +51,7 @@ const authApi = baseApi.injectEndpoints({
     deleteProduct: builder.mutation({
       query: (id) => {
         return {
-          url: `/products/${id}`,
+          url: `/api/v1/products/${id}`,
           method: 'DELETE',
         };
       },
@@ -62,7 +62,7 @@ const authApi = baseApi.injectEndpoints({
     updateProduct: builder.mutation({
       query: (options) => {
         return {
-          url: `/products/${options.id}`,
+          url: `/api/v1/products/${options.id}`,
           method: 'PATCH',
           body: options.data,
         };

@@ -1,35 +1,39 @@
 import { RootState } from '@/redux/store';
+import { IUser } from '@/types';
 import { createSlice } from '@reduxjs/toolkit';
 
-export type TUser = {
-  name: string;
-  email: string;
-  role: string;
-  image: string;
-};
-type TAuthState = {
-  user: null | TUser;
+export interface IAuthState {
+  user: null | IUser;
+  token: null | string;
+  isAuthenticated: boolean;
+}
+
+const initialState: IAuthState = {
+  user: null,
+  token: null,
+  isAuthenticated: false,
 };
 
-const initialState: TAuthState = {
-  user: null,
-};
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    login: (state, action) => {
-      const { user } = action.payload;
+    setUser: (state, action) => {
+      const { user, token } = action.payload;
       state.user = user;
+      state.token = token;
+      state.isAuthenticated = true;
     },
     logout: (state) => {
       state.user = null;
+      state.token = null;
+      state.isAuthenticated = false;
     },
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { setUser, logout } = authSlice.actions;
 
 export default authSlice.reducer;
 
-export const getCurrentUser = (state: RootState) => state.auth.user;
+export const getUserInfo = (state: RootState) => state.auth;

@@ -79,3 +79,4 @@ image,
 
 // Pending 
 1. loading implementation
+2. zod implementation
