@@ -24,6 +24,8 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    setValue,
+    trigger,
     reset,
     formState: { errors, isValid },
   } = useForm<IFormValues>({
@@ -66,6 +68,18 @@ const Login = () => {
     }
   };
 
+  const handleCredentials = async (role: string) => {
+    if (role === 'admin') {
+      setValue('email', 'admin@gmail.com');
+      setValue('password', 'test1234');
+    } else if (role === 'user') {
+      setValue('email', 'user@gmail.com');
+      setValue('password', 'test1234');
+    }
+
+    await trigger();
+  };
+
   if (user) {
     let redirectPath = undefined;
 
@@ -87,6 +101,21 @@ const Login = () => {
   return (
     <section className="pt-5">
       <SectionHeading heading="Login" />
+
+      <div className="flex flex-wrap justify-center gap-2 mb-2">
+        <button
+          onClick={() => handleCredentials('admin')}
+          className="px-2 py-1 text-gray-100 transition duration-300 bg-blue-500 rounded-md"
+        >
+          admin credentials
+        </button>
+        <button
+          onClick={() => handleCredentials('user')}
+          className="px-2 py-1 text-gray-100 transition duration-300 bg-blue-500 rounded-md"
+        >
+          user credentials
+        </button>
+      </div>
       <div className="flex justify-center">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-4 w-96">
