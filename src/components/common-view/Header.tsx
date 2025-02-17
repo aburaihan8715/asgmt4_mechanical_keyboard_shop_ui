@@ -1,37 +1,51 @@
 import BrandLogo from './BrandLogo';
-import { FaCartShopping } from 'react-icons/fa6';
+import { FaBars, FaCartShopping } from 'react-icons/fa6';
 import { Button } from '../ui/button';
 import ActiveLink from './ActiveLink';
 import { Link } from 'react-router';
 import { useAppSelector } from '@/redux/hooks';
 import { useState } from 'react';
-import { getCart } from '@/redux/features/cart/cartSlice';
-import { getUserInfo } from '@/redux/features/auth/authSlice';
+
+import { FaTimes } from 'react-icons/fa';
+import { TProduct } from '@/types';
+import LogoutButton from './LogoutButton';
 
 const Header = () => {
-  const state = useAppSelector((state) => state);
-  const cartData = getCart(state);
-  const products = cartData?.products;
-  const { user } = getUserInfo(state);
+  const cartData = useAppSelector((state) => state.cart);
+  const userData = useAppSelector((state) => state.auth);
+  const products = cartData?.products || [];
+  const user = userData?.user;
+
   const [open, setOpen] = useState(false);
 
   const links = (
     <>
-      <li>
-        <ActiveLink to="/">Home</ActiveLink>
+      <li className="">
+        <ActiveLink className="flex w-full" to="/">
+          Home
+        </ActiveLink>
       </li>
       <li>
-        <ActiveLink to="/products">Products</ActiveLink>
+        <ActiveLink className="flex w-full" to="/products">
+          Products
+        </ActiveLink>
       </li>
       <li>
-        <ActiveLink to="/about">About Us</ActiveLink>
+        <ActiveLink to="/about">About</ActiveLink>
       </li>
       <li>
-        <ActiveLink to="/contact">Contact Us</ActiveLink>
+        <ActiveLink className="flex w-full" to="/contact">
+          Contact
+        </ActiveLink>
       </li>
       {user && (
         <li>
-          <ActiveLink to={`${user?.role}/dashboard`}>Dashboard</ActiveLink>
+          <ActiveLink
+            className="flex w-full"
+            to={`${user?.role}/dashboard`}
+          >
+            Dashboard
+          </ActiveLink>
         </li>
       )}
     </>
@@ -40,101 +54,99 @@ const Header = () => {
   return (
     <header>
       {/* DESKTOP NAV */}
-      <div className="md:flex hidden bg-[#e9effd] justify-between h-[80px] items-center px-10 fixed top-0 w-full z-20">
+      <nav className="md:flex hidden bg-blue-200 h-[80px] items-center px-10 fixed top-0 w-full z-20 gap-10">
         {/* LOGO */}
-        <Link to="/">
-          <BrandLogo />
-        </Link>
-        <nav>
-          <ul className="flex gap-4 font-semibold text-[#212529]">
-            {links}
-          </ul>
-        </nav>
+
+        <div className="hidden lg:block">
+          <Link to="/">
+            <BrandLogo />
+          </Link>
+        </div>
+
+        <ul className="flex items-center ml-auto gap-4 font-semibold text-[#212529]">
+          {links}
+        </ul>
 
         {/* CART,LOGIN,PROFILE GROUP */}
         <div className="flex items-center gap-4">
           <div>
-            <Link to="/cart">
-              <div className="relative mr-2">
-                <FaCartShopping className="text-base text-[#212529]" />
-                <span className="absolute flex items-center justify-center w-5 h-5 font-semibold rounded-full bg-primary text-[#f8f9fa] -top-3 left-3">
-                  {products.length || 0}
-                </span>
-              </div>
-            </Link>
+            <CartButton products={products} />
           </div>
-          <div>
+
+          {user ? (
+            <LogoutButton />
+          ) : (
             <Link to={`/auth/login`}>
               <Button>Login</Button>
             </Link>
-          </div>
-          <div>
+          )}
+
+          {user && (
             <img
               className="object-cover w-10 h-10 rounded-full"
               src="https://cdn.pixabay.com/photo/2020/09/18/05/58/lights-5580916_640.jpg"
               alt=""
             />
-          </div>
+          )}
         </div>
-      </div>
+      </nav>
 
       {/* MOBILE NAV */}
-      <div className="md:hidden">
-        <div className="flex px-2 bg-[#e9effd] h-[80px] items-center justify-between fixed top-0 w-full z-20">
-          <div onClick={() => setOpen(!open)} className="">
-            {open && (
-              <button className="flex items-center justify-center w-10 h-10 text-3xl border text-primary border-primary">
-                &#9776;
-              </button>
-            )}
-
-            {!open && (
-              <button className="flex items-center justify-center w-10 h-10 text-3xl border text-primary border-primary">
-                &#10006;
-              </button>
-            )}
-          </div>
+      <nav className="md:hidden">
+        <div className="flex px-2 bg-blue-200 h-[80px] items-center justify-between fixed top-0 w-full z-20">
+          <button
+            className="flex items-center justify-center text-2xl border rounded-md size-10 text-primary border-primary"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <FaTimes /> : <FaBars />}
+          </button>
 
           <div className="flex items-center gap-3">
             <div className="mr-1">
-              <Link to="/cart">
-                <div className="relative mr-2">
-                  <FaCartShopping className="text-base text-[#212529]" />
-                  <span className="absolute flex items-center justify-center w-5 h-5 font-semibold rounded-full bg-primary text-[#f8f9fa] -top-3 left-3">
-                    {products.length || 0}
-                  </span>
-                </div>
+              <CartButton products={products} />
+            </div>
+
+            {user ? (
+              <LogoutButton />
+            ) : (
+              <Link to={`/auth/login`}>
+                <Button>Login</Button>
               </Link>
-            </div>
+            )}
 
-            <div>
-              <Button onClick={() => alert('Not implement yet')}>
-                Login
-              </Button>
-            </div>
-
-            <div>
+            {user && (
               <img
                 className="object-cover w-10 h-10 rounded-full"
                 src="https://cdn.pixabay.com/photo/2020/09/18/05/58/lights-5580916_640.jpg"
                 alt=""
               />
-            </div>
+            )}
           </div>
         </div>
 
-        <nav className="">
-          <ul
-            className={`flex bg-yellow-50/90 fixed top-[80px] z-20 h-full flex-col gap-2 font-semibold text-[#212529] pt-5 pl-8 w-[180px] -translate-x-[100%] transition-transform duration-500 ${
-              !open && 'translate-x-0'
-            }`}
-          >
-            {links}
-          </ul>
-        </nav>
-      </div>
+        <ul
+          className={`flex bg-blue-200/90 fixed top-[80px] z-20 h-full flex-col gap-2 font-semibold text-[#212529] pt-5 pl-5 pr-2 w-[180px]  transition-transform duration-500 ${
+            open ? 'translate-x-0' : '-translate-x-full'
+          }`}
+        >
+          {links}
+        </ul>
+      </nav>
     </header>
   );
 };
 
 export default Header;
+
+const CartButton = ({ products }: { products: TProduct[] }) => {
+  return (
+    <Link to="/cart">
+      <div className="relative mr-2">
+        <FaCartShopping className="text-base text-[#212529]" />
+        <span className="absolute flex items-center justify-center w-5 h-5 font-semibold rounded-full bg-primary text-[#f8f9fa] -top-3 left-3">
+          {products?.length ?? 0}
+        </span>
+      </div>
+    </Link>
+  );
+};

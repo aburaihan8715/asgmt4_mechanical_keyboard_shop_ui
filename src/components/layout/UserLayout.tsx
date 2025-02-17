@@ -3,13 +3,17 @@ import Sidebar from '../common-view/Sidebar';
 import BrandLogo from '../common-view/BrandLogo';
 import ActiveLink from '../common-view/ActiveLink';
 import { FaHome } from 'react-icons/fa';
+import LogoutButton from '../common-view/LogoutButton';
 
 const userLinks = (
   <>
     <li className="flex">
-      <ActiveLink className="flex items-center gap-2" to="/">
+      <ActiveLink
+        className="flex items-center w-full gap-2"
+        to="/user/dashboard"
+      >
         <FaHome className="text-2xl md:text-base" />
-        <span className="hidden md:block">Home</span>
+        <span className="hidden md:block">Dashboard</span>
       </ActiveLink>
     </li>
   </>
@@ -26,7 +30,10 @@ const UserLayout = () => {
                 <BrandLogo />
               </Link>
               <div className="mt-5">
-                <Sidebar>{userLinks}</Sidebar>
+                <Sidebar>
+                  {userLinks}
+                  <LogoutButton isText={false} />
+                </Sidebar>
               </div>
             </div>
           </div>

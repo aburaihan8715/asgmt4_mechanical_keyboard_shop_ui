@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common-view/SectionHeading';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
-import { useAppDispatch } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { useLoginMutation } from '@/redux/features/auth/authApi';
 import { setUser } from '@/redux/features/auth/authSlice';
 import { toast } from 'sonner';
@@ -19,6 +19,7 @@ const Login = () => {
     useLoginMutation();
   const navigate = useNavigate();
   const location = useLocation();
+  const user = useAppSelector((state) => state.auth.user);
 
   const {
     register,
@@ -47,17 +48,41 @@ const Login = () => {
 
       toast.info('User logged in successfully!!');
       reset();
-      const navigateTo =
-        location?.state?.from?.pathname || `/${user.role}/dashboard`;
-      navigate(navigateTo);
 
-      // navigate('/');
+      let redirectPath = undefined;
+      if (location?.state?.from?.pathname) {
+        redirectPath = location?.state?.from?.pathname;
+      } else if (user.role === 'admin') {
+        redirectPath = '/admin/dashboard';
+      } else if (user.role === 'user') {
+        redirectPath = '/';
+      }
+
+      navigate(redirectPath);
     } catch (error: any) {
       const errorMessage =
         error?.data?.message || error?.message || 'Failed to log in';
       toast.warning(errorMessage);
     }
   };
+
+  if (user) {
+    let redirectPath = undefined;
+
+    if (location?.state?.from?.pathname) {
+      redirectPath = location?.state?.from?.pathname;
+    } else if (user.role === 'admin') {
+      redirectPath = '/admin/dashboard';
+    } else if (user.role === 'user') {
+      redirectPath = '/';
+    }
+
+    return (
+      <>
+        <Navigate to={redirectPath} replace={true} />;
+      </>
+    );
+  }
 
   return (
     <section className="pt-5">

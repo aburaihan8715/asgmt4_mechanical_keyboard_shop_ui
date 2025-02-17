@@ -3,8 +3,9 @@ import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common-view/SectionHeading';
 import { useRegisterMutation } from '@/redux/features/auth/authApi';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router';
+import { Link, Navigate, useNavigate } from 'react-router';
 import { toast } from 'sonner';
+import { useAppSelector } from '@/redux/hooks';
 
 interface IFormValues {
   name: string;
@@ -17,6 +18,8 @@ const Register = () => {
     useRegisterMutation();
 
   const navigate = useNavigate();
+  const user = useAppSelector((state) => state.auth.user);
+
   const {
     register,
     handleSubmit,
@@ -44,7 +47,9 @@ const Register = () => {
       toast.warning(errorMessage);
     }
   };
-
+  if (user) {
+    return <Navigate to={`/${user.role}/dashboard`} replace={true} />;
+  }
   return (
     <section className="pt-5">
       <SectionHeading heading="Register" />

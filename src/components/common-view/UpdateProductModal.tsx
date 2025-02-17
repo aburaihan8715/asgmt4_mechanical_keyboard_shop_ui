@@ -1,4 +1,3 @@
-import { FaPenToSquare } from 'react-icons/fa6';
 import { Button } from '../ui/button';
 import {
   Dialog,
@@ -19,7 +18,7 @@ const UpdateProductModal = ({ id }: { id: string }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <FaPenToSquare className="text-xl text-primary" />
+        <FaEdit className="text-xl text-primary" />
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -37,6 +36,7 @@ const UpdateProductModal = ({ id }: { id: string }) => {
 export default UpdateProductModal;
 
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { FaEdit } from 'react-icons/fa';
 import { toast } from 'sonner';
 
 type FormValues = {

@@ -17,26 +17,49 @@ import UserDashboard from './pages/user-view/Dashboard';
 import Cart from './pages/common-view/Cart';
 import ProductDetails from './pages/common-view/ProductDetails';
 import Products from './pages/common-view/Products';
-import Checkout from './pages/user-view/Checkout';
+import Checkout from './pages/common-view/Checkout';
+import CheckAuth from './components/common-view/CheckAuth';
+import { useAppSelector } from './redux/hooks';
+import Success from './pages/common-view/Success';
 const App = () => {
+  const userData = useAppSelector((state) => state.auth);
+  const isAuthenticated = userData?.isAuthenticated;
+  const role = userData?.user?.role as string;
+
   return (
     <BrowserRouter>
       <Routes>
         {/* ======common======= */}
-        <Route path="/" element={<CommonLayout />}>
+        <Route
+          path="/"
+          element={
+            <CheckAuth isAuthenticated={isAuthenticated} role={role}>
+              <CommonLayout />
+            </CheckAuth>
+          }
+        >
           <Route index element={<Home />} />
           <Route path="about" element={<AboutUs />} />
           <Route path="contact" element={<ContactUs />} />
           <Route path="cart" element={<Cart />} />
           <Route path="products" element={<Products />} />
           <Route path="product-details/:id" element={<ProductDetails />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="success" element={<Success />} />
 
           <Route path="/unauth" element={<Unauth />} />
           <Route path="*" element={<NotFound />} />
         </Route>
 
         {/* ======admin======= */}
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route
+          path="/admin"
+          element={
+            <CheckAuth isAuthenticated={isAuthenticated} role={role}>
+              <AdminLayout />
+            </CheckAuth>
+          }
+        >
           <Route index element={<AdminDashboard />} />
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="product-list" element={<ProductList />} />
@@ -44,14 +67,27 @@ const App = () => {
         </Route>
 
         {/* ======user======= */}
-        <Route path="/user" element={<UserLayout />}>
+        <Route
+          path="/user"
+          element={
+            <CheckAuth isAuthenticated={isAuthenticated} role={role}>
+              <UserLayout />
+            </CheckAuth>
+          }
+        >
           <Route index element={<UserDashboard />} />
           <Route path="dashboard" element={<UserDashboard />} />
-          <Route path="checkout" element={<Checkout />} />
         </Route>
 
         {/* ======auth======= */}
-        <Route path="/auth" element={<AuthLayout />}>
+        <Route
+          path="/auth"
+          element={
+            <CheckAuth isAuthenticated={isAuthenticated} role={role}>
+              <AuthLayout />
+            </CheckAuth>
+          }
+        >
           <Route index element={<Login />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />

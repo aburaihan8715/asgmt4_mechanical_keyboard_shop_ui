@@ -3,23 +3,33 @@ import Sidebar from '../common-view/Sidebar';
 import BrandLogo from '../common-view/BrandLogo';
 import ActiveLink from '../common-view/ActiveLink';
 import { FaClipboardList, FaHome, FaPlusSquare } from 'react-icons/fa';
+import LogoutButton from '../common-view/LogoutButton';
 
 const adminLinks = (
   <>
     <li className="flex">
-      <ActiveLink className="flex items-center gap-2" to="/">
-        <FaHome className="text-2xl md:text-base" />
-        <span className="hidden md:block">Home</span>
+      <ActiveLink
+        className="flex items-center w-full gap-2"
+        to="/admin/dashboard"
+      >
+        <FaHome className="text-base" />
+        <span className="hidden md:block">Dashboard</span>
       </ActiveLink>
     </li>
     <li className="flex">
-      <ActiveLink className="flex items-center gap-2" to="product-list">
+      <ActiveLink
+        className="flex items-center w-full gap-2"
+        to="product-list"
+      >
         <FaClipboardList className="text-2xl md:text-base" />
         <span className="hidden md:block">Product List</span>
       </ActiveLink>
     </li>
     <li className="flex">
-      <ActiveLink className="flex items-center gap-2" to="add-product">
+      <ActiveLink
+        className="flex items-center w-full gap-2"
+        to="add-product"
+      >
         <FaPlusSquare className="text-2xl md:text-base" />
         <span className="hidden md:block">Add Product</span>
       </ActiveLink>
@@ -38,7 +48,10 @@ const AdminLayout = () => {
                 <BrandLogo />
               </Link>
               <div className="mt-5">
-                <Sidebar>{adminLinks}</Sidebar>
+                <Sidebar>
+                  {adminLinks}
+                  <LogoutButton isText={false} />
+                </Sidebar>
               </div>
             </div>
           </div>
